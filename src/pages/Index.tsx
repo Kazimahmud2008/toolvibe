@@ -101,7 +101,7 @@ const Index = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 text-lg px-8">
+              <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-8">
                 <Link to="/tools/qr-code">
                   Try QR Generator
                 </Link>
