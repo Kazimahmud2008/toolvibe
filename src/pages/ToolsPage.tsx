@@ -40,7 +40,7 @@ const allTools = [
     description: "Generate HTML and CSS code for buttons, cards, forms, and layouts with live preview.",
     icon: Code,
     href: "/tools/html-css",
-    badge: "Coming Soon"
+    badge: "Developer"
   },
   {
     title: "Meta Tag Generator",
@@ -61,21 +61,21 @@ const allTools = [
     description: "Compress JPEG and PNG images to reduce file size while maintaining quality.",
     icon: Image,
     href: "/tools/image-compressor",
-    badge: "Coming Soon"
+    badge: "Media"
   },
   {
     title: "Favicon Generator",
     description: "Create favicons from any image. Generate multiple sizes and formats for all devices.",
     icon: FileImage,
     href: "/tools/favicon",
-    badge: "Coming Soon"
+    badge: "Design"
   },
   {
     title: "URL Shortener",
     description: "Create short, memorable links from long URLs. Track clicks and manage your links.",
     icon: Scissors,
     href: "/tools/url-shortener",
-    badge: "Coming Soon"
+    badge: "Utility"
   },
   {
     title: "CSS Grid Generator",

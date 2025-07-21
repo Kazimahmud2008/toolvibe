@@ -11,6 +11,7 @@ import ColorPickerPage from "./pages/ColorPickerPage";
 import HTMLCSSPage from "./pages/HTMLCSSPage";
 import ImageCompressorPage from "./pages/ImageCompressorPage";
 import URLShortenerPage from "./pages/URLShortenerPage";
+import FaviconPage from "./pages/FaviconPage";
 import ToolsPage from "./pages/ToolsPage";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/tools/html-css" element={<HTMLCSSPage />} />
           <Route path="/tools/image-compressor" element={<ImageCompressorPage />} />
           <Route path="/tools/url-shortener" element={<URLShortenerPage />} />
+          <Route path="/tools/favicon" element={<FaviconPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
