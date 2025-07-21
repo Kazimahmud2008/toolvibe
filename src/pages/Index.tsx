@@ -44,21 +44,21 @@ const tools = [
     description: "Generate HTML and CSS code for buttons, cards, forms, and layouts with live preview.",
     icon: Code,
     href: "/tools/html-css",
-    badge: "Coming Soon"
+    badge: "Developer"
   },
   {
     title: "Image Compressor",
     description: "Compress JPEG and PNG images to reduce file size while maintaining quality.",
     icon: Image,
     href: "/tools/image-compressor",
-    badge: "Coming Soon"
+    badge: "Popular"
   },
   {
     title: "URL Shortener",
     description: "Create short, memorable links from long URLs. Track clicks and manage your links.",
     icon: LinkIcon,
     href: "/tools/url-shortener",
-    badge: "Coming Soon"
+    badge: "New"
   }
 ];
 
