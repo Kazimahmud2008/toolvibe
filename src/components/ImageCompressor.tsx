@@ -113,29 +113,33 @@ export const ImageCompressor = () => {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>Upload Image</CardTitle>
+          <CardTitle className="flex items-center space-x-2">
+            <Upload className="w-5 h-5" />
+            <span>Upload Image</span>
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <div>
-              <Label htmlFor="image-upload">Select Image</Label>
-              <Input
-                id="image-upload"
-                type="file"
-                accept="image/*"
-                onChange={handleFileSelect}
-                ref={fileInputRef}
-              />
+            <div 
+              className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center hover:border-primary/50 hover:bg-muted/50 transition-all cursor-pointer"
+              onClick={() => fileInputRef.current?.click()}
+            >
+              <Upload className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+              <p className="text-lg font-medium mb-2">Drop your image here</p>
+              <p className="text-sm text-muted-foreground mb-4">or click to browse files</p>
+              <Button variant="outline" size="sm">
+                <ImageIcon className="w-4 h-4 mr-2" />
+                Choose Image
+              </Button>
             </div>
             
-            <Button
-              onClick={() => fileInputRef.current?.click()}
-              variant="outline"
-              className="w-full"
-            >
-              <Upload className="w-4 h-4 mr-2" />
-              Choose Image File
-            </Button>
+            <Input
+              type="file"
+              accept="image/*"
+              onChange={handleFileSelect}
+              ref={fileInputRef}
+              className="hidden"
+            />
           </div>
         </CardContent>
       </Card>

@@ -12,6 +12,9 @@ import HTMLCSSPage from "./pages/HTMLCSSPage";
 import ImageCompressorPage from "./pages/ImageCompressorPage";
 import URLShortenerPage from "./pages/URLShortenerPage";
 import FaviconPage from "./pages/FaviconPage";
+import MetaTagsPage from "./pages/MetaTagsPage";
+import LinkInBioPage from "./pages/LinkInBioPage";
+import CSSGridPage from "./pages/CSSGridPage";
 import ToolsPage from "./pages/ToolsPage";
 
 const queryClient = new QueryClient();
@@ -32,6 +35,9 @@ const App = () => (
           <Route path="/tools/image-compressor" element={<ImageCompressorPage />} />
           <Route path="/tools/url-shortener" element={<URLShortenerPage />} />
           <Route path="/tools/favicon" element={<FaviconPage />} />
+          <Route path="/tools/meta-tags" element={<MetaTagsPage />} />
+          <Route path="/tools/link-in-bio" element={<LinkInBioPage />} />
+          <Route path="/tools/css-grid" element={<CSSGridPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -47,14 +47,14 @@ const allTools = [
     description: "Generate SEO-optimized meta tags for better search engine visibility and social sharing.",
     icon: Tags,
     href: "/tools/meta-tags",
-    badge: "Coming Soon"
+    badge: "SEO"
   },
   {
     title: "Link-in-Bio Generator",
     description: "Create beautiful landing pages with multiple links for your social media bio.",
     icon: LinkIcon,
     href: "/tools/link-in-bio",
-    badge: "Coming Soon"
+    badge: "Social"
   },
   {
     title: "Image Compressor",
@@ -82,7 +82,7 @@ const allTools = [
     description: "Visual CSS Grid generator with live preview. Create responsive grid layouts effortlessly.",
     icon: Grid3X3,
     href: "/tools/css-grid",
-    badge: "Coming Soon"
+    badge: "Developer"
   }
 ];
 
