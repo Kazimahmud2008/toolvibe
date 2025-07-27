@@ -5,7 +5,7 @@ Allow: /
 Sitemap:https://toolvibe-ten.vercel.app/sitemap.xml
 
 # Optimize crawling
-Crawl-delay: 1
+#Crawl-delay: 1
 
 # Allow all major search engines
 User-agent: Googlebot
