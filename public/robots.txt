@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap:https://toolvibe-ten.vercel.app/sitemap.xml
+Sitemap: https://toolvibe-ten.vercel.app/sitemap.xml
 
 # Optimize crawling
 #Crawl-delay: 1
