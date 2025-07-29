@@ -17,6 +17,10 @@ export default function ToolRouter() {
   const router = useRouter();
   const { tool } = router.query;
 
+  if (!tool || typeof tool !== 'string') {
+    return null; // or loading spinner
+  }
+
   const renderPage = () => {
     switch (tool) {
       case 'qr-code':
@@ -44,6 +48,19 @@ export default function ToolRouter() {
     }
   };
 
+  const titleMap: Record<string, string> = {
+    'qr-code': 'QR Code Generator',
+    'json-formatter': 'JSON Formatter',
+    'color-picker': 'Color Picker',
+    'css-grid': 'CSS Grid Generator',
+    'favicon': 'Favicon Generator',
+    'html-css': 'HTML & CSS Beautifier',
+    'image-compressor': 'Image Compressor',
+    'link-in-bio': 'Link in Bio Page',
+    'meta-tags': 'Meta Tags Preview',
+    'url-shortener': 'Shorten URLs Easily',
+  };
+
   return (
     <>
       <Head>
@@ -51,7 +68,17 @@ export default function ToolRouter() {
           rel="canonical"
           href={`https://toolvibe-ten.vercel.app/tools/${tool}`}
         />
-        <title>{tool ? `${tool} - ToolVibe` : 'Tool - ToolVibe'}</title>
+        <title>
+          {titleMap[tool] ? `${titleMap[tool]} | ToolVibe` : 'Tool | ToolVibe'}
+        </title>
+        <meta
+          name="description"
+          content={
+            titleMap[tool]
+              ? `Use ToolVibe's free ${titleMap[tool]} online. Fast, simple, and effective.`
+              : 'Tool page on ToolVibe'
+          }
+        />
       </Head>
       {renderPage()}
     </>
