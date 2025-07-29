@@ -11,22 +11,15 @@
   ],
   "routes": [
     {
-      "handle": "filesystem"
+      "src": "/sitemap\\.xml",
+      "headers": {
+        "Content-Type": "application/xml; charset=utf-8"
+      }
     },
     {
-      "src": "/.*",
-      "dest": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/sitemap.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/xml; charset=utf-8"
-        }
-      ]
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "methods": ["GET"]
     }
   ]
 }
