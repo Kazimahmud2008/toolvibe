@@ -31,25 +31,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://toolvibe-ten.vercel.app/tools/html-css</loc>
-    <lastmod>2025-07-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://toolvibe-ten.vercel.app/tools/meta-tags</loc>
-    <lastmod>2025-07-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://toolvibe-ten.vercel.app/tools/link-in-bio</loc>
-    <lastmod>2025-07-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://toolvibe-ten.vercel.app/tools/image-compressor</loc>
+    <loc>https://toolvibe-ten.vercel.app/tools/css-grid</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -61,13 +43,31 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toolvibe-ten.vercel.app/tools/url-shortener</loc>
+    <loc>https://toolvibe-ten.vercel.app/tools/html-css</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toolvibe-ten.vercel.app/tools/css-grid</loc>
+    <loc>https://toolvibe-ten.vercel.app/tools/image-compressor</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://toolvibe-ten.vercel.app/tools/link-in-bio</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://toolvibe-ten.vercel.app/tools/meta-tags</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://toolvibe-ten.vercel.app/tools/url-shortener</loc>
     <lastmod>2025-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
