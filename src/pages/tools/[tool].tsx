@@ -18,7 +18,7 @@ export default function ToolRouter() {
   const { tool } = router.query;
 
   if (!tool || typeof tool !== 'string') {
-    return null; // or loading spinner
+    return null; // বা লোডিং স্পিনার
   }
 
   const renderPage = () => {
@@ -56,9 +56,9 @@ export default function ToolRouter() {
     'favicon': 'Favicon Generator',
     'html-css': 'HTML & CSS Beautifier',
     'image-compressor': 'Image Compressor',
-    'link-in-bio': 'Link in Bio Page',
-    'meta-tags': 'Meta Tags Preview',
-    'url-shortener': 'Shorten URLs Easily',
+    'link-in-bio': 'Link in Bio',
+    'meta-tags': 'Meta Tags Generator',
+    'url-shortener': 'URL Shortener',
   };
 
   return (
