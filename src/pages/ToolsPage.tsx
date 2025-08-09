@@ -15,6 +15,34 @@ import { ToolCard } from "@/components/ToolCard";
 
 const allTools = [
   {
+    title: "Password Generator",
+    description: "Generate secure passwords with customizable length and character options.",
+    icon: Code,
+    href: "/tools/password-generator",
+    badge: "Security"
+  },
+  {
+    title: "Base64 Encoder/Decoder",
+    description: "Encode text to Base64 or decode Base64 strings back to text instantly.",
+    icon: FileText,
+    href: "/tools/base64",
+    badge: "Developer"
+  },
+  {
+    title: "UUID Generator",
+    description: "Generate unique identifiers (UUID v4) for your applications.",
+    icon: QrCode,
+    href: "/tools/uuid-generator",
+    badge: "Developer"
+  },
+  {
+    title: "Hash Generator",
+    description: "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from your text.",
+    icon: Code,
+    href: "/tools/hash-generator",
+    badge: "Security"
+  },
+  {
     title: "QR Code Generator",
     description: "Create custom QR codes for URLs, text, WiFi, and more. Customize colors and download as PNG.",
     icon: QrCode,

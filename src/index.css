@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* MrFreeTools Style Design System */
+/* ToolVibe Design System - Modern Purple & Blue Theme */
 
 @layer base {
   :root {
@@ -12,15 +12,15 @@
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     
-    /* MrFreeTools Inspired Palette */
-    --primary: 174 80% 45%; /* Teal #23B3A6 */
+    /* ToolVibe Brand Palette - Purple & Blue */
+    --primary: 262 83% 58%; /* Rich Purple #8B5CF6 */
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 174 80% 55%;
+    --primary-glow: 262 83% 68%;
     
-    --secondary: 174 70% 50%; /* Lighter Teal */
+    --secondary: 217 91% 60%; /* Bright Blue #3B82F6 */
     --secondary-foreground: 0 0% 98%;
     
-    --accent: 174 90% 40%; /* Darker Teal */
+    --accent: 142 76% 36%; /* Green Accent #10B981 */
     --accent-foreground: 0 0% 98%;
     
     /* Neutral System */
@@ -38,7 +38,7 @@
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(174 80% 45%) 0%, hsl(174 70% 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(217 91% 60%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
     
     /* Shadows */
@@ -119,8 +119,8 @@
     background: var(--gradient-hero);
   }
   
-  .mrfree-hero {
-    background: linear-gradient(135deg, hsl(174 80% 45%) 0%, hsl(174 70% 50%) 100%);
+  .toolvibe-hero {
+    background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(217 91% 60%) 100%);
   }
   
   .card-gradient {

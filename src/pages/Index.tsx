@@ -24,6 +24,34 @@ import { Input } from "@/components/ui/input";
 
 const tools = [
   {
+    title: "Password Generator",
+    description: "Generate secure passwords with customizable length and character options.",
+    icon: Code,
+    href: "/tools/password-generator",
+    badge: "Security"
+  },
+  {
+    title: "Base64 Encoder/Decoder",
+    description: "Encode text to Base64 or decode Base64 strings back to text instantly.",
+    icon: FileText,
+    href: "/tools/base64",
+    badge: "Developer"
+  },
+  {
+    title: "UUID Generator",
+    description: "Generate unique identifiers (UUID v4) for your applications.",
+    icon: QrCode,
+    href: "/tools/uuid-generator",
+    badge: "Developer"
+  },
+  {
+    title: "Hash Generator",
+    description: "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from your text.",
+    icon: Code,
+    href: "/tools/hash-generator",
+    badge: "Security"
+  },
+  {
     title: "QR Code Generator",
     description: "Create custom QR codes for URLs, text, WiFi, and more. Customize colors and download as PNG.",
     icon: QrCode,
@@ -57,13 +85,6 @@ const tools = [
     icon: Image,
     href: "/tools/image-compressor",
     badge: "Popular"
-  },
-  {
-    title: "URL Shortener",
-    description: "Create short, memorable links from long URLs. Track clicks and manage your links.",
-    icon: LinkIcon,
-    href: "/tools/url-shortener",
-    badge: "New"
   }
 ];
 
@@ -121,7 +142,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section - MrFreeTools Style */}
-      <section className="mrfree-hero text-white py-20 md:py-32">
+      <section className="toolvibe-hero text-white py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
