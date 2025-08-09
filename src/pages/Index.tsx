@@ -93,26 +93,26 @@ const highlights = [
 const categories = [
   {
     icon: Compass,
-    title: "Explore All",
-    description: "Explore thousands of free tools using advanced filters.",
+    title: "All Tools",
+    description: "Explore our complete collection of free online tools.",
     href: "/tools"
   },
   {
     icon: Layers,
-    title: "Categories",
-    description: "Browse through our main categories for every need.",
+    title: "Popular Tools",
+    description: "Most used tools by our community members.",
     href: "/tools"
   },
   {
     icon: TrendingUp,
-    title: "Skills",
-    description: "Find the perfect tools and resources for your skill.",
+    title: "New Tools",
+    description: "Recently added tools and latest updates.",
     href: "/tools"
   },
   {
     icon: FileType,
-    title: "Full Index",
-    description: "Search our complete index with 600+ subcategories.",
+    title: "Categories",
+    description: "Browse tools organized by categories and use cases.",
     href: "/tools"
   }
 ];
@@ -125,23 +125,23 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Achieve More With Less
+              Free Tools for Everyone
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/95">
-              Find Free Software, Apps, Tools, and Other Resources For Professional Growth.
+              No signup required. No limitations. Just powerful utilities to boost your productivity.
             </p>
             
             {/* Tool Count Badge */}
             <div className="inline-flex items-center bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-8">
-              <span className="bg-white text-red-500 px-2 py-1 rounded mr-2 text-xs font-bold">17 Free Tools</span>
-              Added in the Last 7 Days
+              <span className="bg-white text-red-500 px-2 py-1 rounded mr-2 text-xs font-bold">10+ Free Tools</span>
+              Always Available
             </div>
 
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto mb-8">
               <div className="relative">
                 <Input 
-                  placeholder="Search Mr. Free Tools" 
+                  placeholder="Search ToolVibe" 
                   className="w-full py-4 px-6 text-lg rounded-full bg-white text-gray-900 border-0"
                 />
                 <Button className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full w-10 h-10 bg-primary hover:bg-primary/90">
@@ -192,12 +192,12 @@ const Index = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">How to Use Mr. Free Tools?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why Choose ToolVibe?</h2>
             <div className="w-12 h-1 bg-primary mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Mr. Free Tools is a directory site with an advanced search engine that helps you find 
-              the best free software, apps, and tools from around the web. Those free solutions 
-              can help you with work, projects, studies, or hobbies.
+              ToolVibe is your go-to destination for free online tools. No registration required, 
+              no hidden fees, no limitations. Just powerful, browser-based utilities to help you 
+              get work done faster and more efficiently.
             </p>
           </div>
 

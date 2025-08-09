@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 const navigation = [
   { name: "Tools", href: "/tools" },
   { name: "Categories", href: "/tools" },
-  { name: "Index", href: "/tools" },
-  { name: "Skills", href: "/tools" },
+  { name: "All Tools", href: "/tools" },
+  { name: "About", href: "/" },
 ];
 
 interface LayoutProps {
@@ -40,27 +40,23 @@ export const Layout = ({ children }: LayoutProps) => {
 
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <img 
-                src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40'%3e%3ctext x='10' y='30' fill='white' font-family='Arial, sans-serif' font-size='24' font-weight='bold'%3eMr.FreeTools%3c/text%3e%3c/svg%3e" 
-                alt="Mr.FreeTools" 
-                className="h-8"
-              />
+              <span className="text-xl font-bold text-white">ToolVibe</span>
             </Link>
 
             {/* Right Navigation */}
             <div className="hidden md:flex items-center space-x-1">
-              <Link to="/tools" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors">
-                Deals
+              <Link to="/tools/qr-code" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors">
+                QR Code
               </Link>
-              <Link to="/tools" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors">
-                Blog
+              <Link to="/tools/json-formatter" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors">
+                JSON
               </Link>
-              <Link to="/tools" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors">
-                AI
+              <Link to="/tools/color-picker" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors">
+                Colors
               </Link>
               <Link to="/tools" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors flex items-center">
                 <Star className="h-4 w-4 mr-1" />
-                Favorites
+                Popular
               </Link>
             </div>
 
@@ -104,7 +100,7 @@ export const Layout = ({ children }: LayoutProps) => {
       <footer className="bg-gray-100 border-t">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center text-sm text-gray-600">
-            <p>&copy; 2024 Mr.FreeTools. Find Free Software, Apps, Tools, and Other Resources For Professional Growth.</p>
+            <p>&copy; 2024 ToolVibe. Free online tools for everyone - no signup required!</p>
           </div>
         </div>
       </footer>
