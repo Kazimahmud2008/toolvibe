@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ToolVibe Design System - Modern, Sharp, Professional */
+/* MrFreeTools Style Design System */
 
 @layer base {
   :root {
@@ -12,15 +12,15 @@
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     
-    /* ToolVibe Brand Palette */
-    --primary: 224 71% 36%; /* Modern Blue #1E40AF */
+    /* MrFreeTools Inspired Palette */
+    --primary: 174 80% 45%; /* Teal #23B3A6 */
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 224 71% 50%;
+    --primary-glow: 174 80% 55%;
     
-    --secondary: 25 95% 53%; /* Vibrant Orange #F97316 */
+    --secondary: 174 70% 50%; /* Lighter Teal */
     --secondary-foreground: 0 0% 98%;
     
-    --accent: 262 80% 60%; /* Purple Accent */
+    --accent: 174 90% 40%; /* Darker Teal */
     --accent-foreground: 0 0% 98%;
     
     /* Neutral System */
@@ -38,7 +38,7 @@
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(174 80% 45%) 0%, hsl(174 70% 50%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
     
     /* Shadows */
@@ -119,6 +119,10 @@
     background: var(--gradient-hero);
   }
   
+  .mrfree-hero {
+    background: linear-gradient(135deg, hsl(174 80% 45%) 0%, hsl(174 70% 50%) 100%);
+  }
+  
   .card-gradient {
     background: var(--gradient-card);
   }
@@ -141,6 +145,10 @@
   
   .tool-card {
     @apply bg-card border border-border rounded-xl p-6 shadow-card hover-lift;
+  }
+  
+  .category-card {
+    @apply bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300;
   }
   
   .btn-primary {

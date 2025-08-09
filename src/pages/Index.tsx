@@ -6,16 +6,21 @@ import {
   Code, 
   Image, 
   Link as LinkIcon,
-  Zap,
-  ArrowRight,
-  Star,
-  Users,
-  Shield
+  Search,
+  Gift,
+  Hand,
+  User,
+  Monitor,
+  Compass,
+  Layers,
+  TrendingUp,
+  FileType
 } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { ToolCard } from "@/components/ToolCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 const tools = [
   {
@@ -62,145 +67,154 @@ const tools = [
   }
 ];
 
-const features = [
+const highlights = [
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "All tools work instantly in your browser with no server delays"
+    icon: Gift,
+    title: "Only Free Tools",
+    description: ""
   },
   {
-    icon: Shield,
-    title: "Privacy First",
-    description: "Your data never leaves your browser. Everything processed locally"
+    icon: Hand,
+    title: "Free & Open Service",
+    description: ""
   },
   {
-    icon: Users,
+    icon: User,
     title: "No Signup Required",
-    description: "Access all tools immediately without creating an account"
+    description: ""
+  },
+  {
+    icon: Monitor,
+    title: "Ad Free Website",
+    description: ""
+  }
+];
+
+const categories = [
+  {
+    icon: Compass,
+    title: "Explore All",
+    description: "Explore thousands of free tools using advanced filters.",
+    href: "/tools"
+  },
+  {
+    icon: Layers,
+    title: "Categories",
+    description: "Browse through our main categories for every need.",
+    href: "/tools"
+  },
+  {
+    icon: TrendingUp,
+    title: "Skills",
+    description: "Find the perfect tools and resources for your skill.",
+    href: "/tools"
+  },
+  {
+    icon: FileType,
+    title: "Full Index",
+    description: "Search our complete index with 600+ subcategories.",
+    href: "/tools"
   }
 ];
 
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative container mx-auto px-4 py-20 md:py-32">
+      {/* Hero Section - MrFreeTools Style */}
+      <section className="mrfree-hero text-white py-20 md:py-32">
+        <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Free Tools for Everyone
+              Achieve More With Less
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90">
-              No signup required. No limitations. Just powerful utilities to boost your productivity.
+            <p className="text-xl md:text-2xl mb-8 text-white/95">
+              Find Free Software, Apps, Tools, and Other Resources For Professional Growth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8">
-                <Link to="/tools">
-                  Explore All Tools
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8">
-                <Link to="/tools/qr-code">
-                  Try QR Generator
-                </Link>
-              </Button>
+            
+            {/* Tool Count Badge */}
+            <div className="inline-flex items-center bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-8">
+              <span className="bg-white text-red-500 px-2 py-1 rounded mr-2 text-xs font-bold">17 Free Tools</span>
+              Added in the Last 7 Days
+            </div>
+
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto mb-8">
+              <div className="relative">
+                <Input 
+                  placeholder="Search Mr. Free Tools" 
+                  className="w-full py-4 px-6 text-lg rounded-full bg-white text-gray-900 border-0"
+                />
+                <Button className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full w-10 h-10 bg-primary hover:bg-primary/90">
+                  <Search className="w-5 h-5" />
+                </Button>
+              </div>
+            </div>
+
+            <p className="text-white/80 mb-12">
+              Or <Link to="/tools" className="underline hover:no-underline">Browse All Free Tools</Link>
+            </p>
+
+            {/* Highlights */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              {highlights.map((highlight, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                    <highlight.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-white text-sm font-medium">{highlight.title}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 bg-muted/30">
+      {/* Categories Section */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose ToolVibe?</h2>
-            <p className="text-xl text-muted-foreground">Built for speed, privacy, and ease of use</p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {features.map((feature, index) => (
-              <Card key={index} className="text-center hover-lift">
-                <CardContent className="pt-8 pb-6">
-                  <div className="bg-gradient-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <feature.icon className="w-8 h-8 text-white" />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+            {categories.map((category, index) => (
+              <Link to={category.href} key={index}>
+                <div className="category-card text-center">
+                  <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <category.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">{category.title}</h3>
+                  <p className="text-gray-600 text-sm">{category.description}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Tools Grid */}
-      <section className="py-16">
+      {/* How to Use Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Popular Tools</h2>
-            <p className="text-xl text-muted-foreground">
-              Start using these powerful tools instantly
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">How to Use Mr. Free Tools?</h2>
+            <div className="w-12 h-1 bg-primary mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              Mr. Free Tools is a directory site with an advanced search engine that helps you find 
+              the best free software, apps, and tools from around the web. Those free solutions 
+              can help you with work, projects, studies, or hobbies.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+
+          {/* Popular Tools Grid */}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mb-16">
             {tools.map((tool, index) => (
               <ToolCard key={index} {...tool} />
             ))}
           </div>
-          <div className="text-center mt-12">
+
+          <div className="text-center">
             <Button asChild size="lg" className="btn-primary text-lg px-8">
               <Link to="/tools">
                 View All Tools
-                <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
           </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid gap-8 md:grid-cols-3 text-center">
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">10+</div>
-              <p className="text-muted-foreground">Free Tools</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">100%</div>
-              <p className="text-muted-foreground">No Signup Required</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">
-                <Star className="inline w-8 h-8 text-yellow-500 mr-1" />
-                4.9
-              </div>
-              <p className="text-muted-foreground">User Rating</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <Card className="bg-gradient-hero text-white text-center p-8 max-w-4xl mx-auto">
-            <CardContent>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Get Started?
-              </h2>
-              <p className="text-xl mb-8 text-white/90">
-                Join thousands of users who trust ToolVibe for their daily tasks
-              </p>
-              <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8">
-                <Link to="/tools">
-                  Start Using Tools Now
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
         </div>
       </section>
     </Layout>

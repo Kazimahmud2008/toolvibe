@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, Heart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "QR Generator", href: "/tools/qr-code" },
-  { name: "JSON Formatter", href: "/tools/json-formatter" },
-  { name: "Color Picker", href: "/tools/color-picker" },
-  { name: "All Tools", href: "/tools" },
+  { name: "Tools", href: "/tools" },
+  { name: "Categories", href: "/tools" },
+  { name: "Index", href: "/tools" },
+  { name: "Skills", href: "/tools" },
 ];
 
 interface LayoutProps {
@@ -21,40 +20,55 @@ export const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      {/* Header - MrFreeTools Style */}
+      <header className="bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-gradient-hero rounded-lg p-2">
-                <Zap className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-foreground">ToolVibe</span>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-6">
-              {navigation.map((item) => (
+            {/* Left Navigation */}
+            <div className="hidden md:flex items-center space-x-1">
+              <Heart className="h-4 w-4 text-white mr-2" />
+              {navigation.slice(0, 4).map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    location.pathname === item.href
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  }`}
+                  className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors"
                 >
                   {item.name}
                 </Link>
               ))}
-            </nav>
+            </div>
+
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+              <img 
+                src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40'%3e%3ctext x='10' y='30' fill='white' font-family='Arial, sans-serif' font-size='24' font-weight='bold'%3eMr.FreeTools%3c/text%3e%3c/svg%3e" 
+                alt="Mr.FreeTools" 
+                className="h-8"
+              />
+            </Link>
+
+            {/* Right Navigation */}
+            <div className="hidden md:flex items-center space-x-1">
+              <Link to="/tools" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors">
+                Deals
+              </Link>
+              <Link to="/tools" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors">
+                Blog
+              </Link>
+              <Link to="/tools" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors">
+                AI
+              </Link>
+              <Link to="/tools" className="text-sm text-white/90 hover:text-white px-3 py-2 transition-colors flex items-center">
+                <Star className="h-4 w-4 mr-1" />
+                Favorites
+              </Link>
+            </div>
 
             {/* Mobile menu button */}
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
+              className="md:hidden text-white hover:bg-white/20"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -63,17 +77,13 @@ export const Layout = ({ children }: LayoutProps) => {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden border-t bg-background/95 backdrop-blur">
+            <div className="md:hidden border-t border-white/20">
               <nav className="flex flex-col space-y-1 px-4 py-4">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`block px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                      location.pathname === item.href
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                    }`}
+                    className="block px-3 py-2 text-sm text-white/90 hover:text-white transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -90,69 +100,11 @@ export const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
 
-      {/* Footer */}
-      <footer className="border-t bg-muted/50">
+      {/* Footer - Simple like MrFreeTools */}
+      <footer className="bg-gray-100 border-t">
         <div className="container mx-auto px-4 py-8">
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* Brand */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <div className="bg-gradient-hero rounded-lg p-2">
-                  <Zap className="h-5 w-5 text-white" />
-                </div>
-                <span className="text-lg font-bold">ToolVibe</span>
-              </div>
-              <p className="text-sm text-muted-foreground max-w-xs">
-                Free tools for everyone. No signup required, no limitations. 
-                Just powerful utilities to boost your productivity.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div className="space-y-4">
-              <h3 className="text-sm font-semibold">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link to="/tools" className="text-muted-foreground hover:text-foreground transition-colors">All Tools</Link></li>
-                <li><Link to="/tools/qr-code" className="text-muted-foreground hover:text-foreground transition-colors">QR Generator</Link></li>
-                <li><Link to="/tools/json-formatter" className="text-muted-foreground hover:text-foreground transition-colors">JSON Formatter</Link></li>
-                <li><Link to="/tools/color-picker" className="text-muted-foreground hover:text-foreground transition-colors">Color Picker</Link></li>
-              </ul>
-            </div>
-
-            {/* Newsletter */}
-            <div className="space-y-4">
-              <h3 className="text-sm font-semibold">Stay Updated</h3>
-              <p className="text-sm text-muted-foreground">
-                Get notified about new tools and features
-              </p>
-              <form className="flex space-x-2" onSubmit={(e) => {
-                e.preventDefault();
-                const email = (e.target as HTMLFormElement).email.value;
-                if (email) {
-                  // Simple client-side storage
-                  const emails = JSON.parse(localStorage.getItem('newsletter-emails') || '[]');
-                  emails.push(email);
-                  localStorage.setItem('newsletter-emails', JSON.stringify(emails));
-                  alert('Thanks for subscribing!');
-                  (e.target as HTMLFormElement).reset();
-                }
-              }}>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 text-sm border border-input rounded-md bg-background"
-                  required
-                />
-                <Button type="submit" size="sm" className="btn-primary">
-                  Subscribe
-                </Button>
-              </form>
-            </div>
-          </div>
-
-          <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 ToolVibe. Free tools for everyone, no signup required!</p>
+          <div className="text-center text-sm text-gray-600">
+            <p>&copy; 2024 Mr.FreeTools. Find Free Software, Apps, Tools, and Other Resources For Professional Growth.</p>
           </div>
         </div>
       </footer>
