@@ -20,6 +20,12 @@ import Base64Page from "./pages/Base64Page";
 import PasswordGeneratorPage from "./pages/PasswordGeneratorPage";
 import UUIDGeneratorPage from "./pages/UUIDGeneratorPage";
 import HashGeneratorPage from "./pages/HashGeneratorPage";
+import CSSAnimationPage from "./pages/CSSAnimationPage";
+import TextCaseConverterPage from "./pages/TextCaseConverterPage";
+import WordCounterPage from "./pages/WordCounterPage";
+import LoremIpsumPage from "./pages/LoremIpsumPage";
+import RegexTesterPage from "./pages/RegexTesterPage";
+import TimestampConverterPage from "./pages/TimestampConverterPage";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +52,12 @@ const App = () => (
           <Route path="/tools/password-generator" element={<PasswordGeneratorPage />} />
           <Route path="/tools/uuid-generator" element={<UUIDGeneratorPage />} />
           <Route path="/tools/hash-generator" element={<HashGeneratorPage />} />
+          <Route path="/tools/css-animation" element={<CSSAnimationPage />} />
+          <Route path="/tools/text-case-converter" element={<TextCaseConverterPage />} />
+          <Route path="/tools/word-counter" element={<WordCounterPage />} />
+          <Route path="/tools/lorem-ipsum" element={<LoremIpsumPage />} />
+          <Route path="/tools/regex-tester" element={<RegexTesterPage />} />
+          <Route path="/tools/timestamp-converter" element={<TimestampConverterPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

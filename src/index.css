@@ -9,13 +9,13 @@
 @layer base {
   :root {
     /* Core Colors */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --background: 250 20% 98%;
+    --foreground: 240 10% 15%;
     
-    /* 10015.io Blue Theme */
-    --primary: 221 83% 53%; /* Clean Blue #4C6EF5 */
+    /* Purple Theme */
+    --primary: 270 80% 60%; /* Modern Purple */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 221 83% 63%;
+    --primary-glow: 280 85% 65%;
     
     --secondary: 210 40% 96%; /* Light Gray */
     --secondary-foreground: 222 47% 11%;
