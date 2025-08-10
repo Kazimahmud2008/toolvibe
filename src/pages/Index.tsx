@@ -141,67 +141,70 @@ const categories = [
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section - MrFreeTools Style */}
-      <section className="toolvibe-hero text-white py-20 md:py-32">
-        <div className="container mx-auto px-4">
+      {/* Hero Section - 10015.io Style */}
+      <section className="clean-hero py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Free Tools for Everyone
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+              All <span className="text-primary underline decoration-wavy decoration-primary/50">Online Tools</span> in "One Box"
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/95">
-              No signup required. No limitations. Just powerful utilities to boost your productivity.
+            <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto">
+              No need to bookmark the tools you like separately.
+            </p>
+            <p className="text-lg mb-12 text-muted-foreground">
+              ToolVibe is a <strong className="text-primary">"free all-in-one toolbox"</strong> solution created to ease your life by preventing bookmark mess.
             </p>
             
-            {/* Tool Count Badge */}
-            <div className="inline-flex items-center bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-8">
-              <span className="bg-white text-red-500 px-2 py-1 rounded mr-2 text-xs font-bold">10+ Free Tools</span>
-              Always Available
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+              <Button asChild size="lg" className="btn-primary text-lg px-8 py-4">
+                <Link to="/tools">
+                  Explore Tools →
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+                <QrCode className="w-5 h-5 mr-2" />
+                Product Finder
+              </Button>
             </div>
 
-            {/* Search Bar */}
-            <div className="max-w-2xl mx-auto mb-8">
-              <div className="relative">
-                <Input 
-                  placeholder="Search ToolVibe" 
-                  className="w-full py-4 px-6 text-lg rounded-full bg-white text-gray-900 border-0"
-                />
-                <Button className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full w-10 h-10 bg-primary hover:bg-primary/90">
-                  <Search className="w-5 h-5" />
-                </Button>
+            {/* Featured Brands */}
+            <div className="mb-16">
+              <p className="text-sm text-muted-foreground mb-6">Featured in:</p>
+              <div className="flex justify-center items-center gap-8 opacity-60">
+                <div className="text-sm font-medium text-muted-foreground">Product Hunt</div>
+                <div className="text-sm font-medium text-muted-foreground">Y Combinator</div>
+                <div className="text-sm font-medium text-muted-foreground">Indie Hackers</div>
+                <div className="text-sm font-medium text-muted-foreground">Reddit</div>
               </div>
-            </div>
-
-            <p className="text-white/80 mb-12">
-              Or <Link to="/tools" className="underline hover:no-underline">Browse All Free Tools</Link>
-            </p>
-
-            {/* Highlights */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              {highlights.map((highlight, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-3">
-                    <highlight.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <span className="text-white text-sm font-medium">{highlight.title}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
-            {categories.map((category, index) => (
-              <Link to={category.href} key={index}>
-                <div className="category-card text-center">
-                  <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <category.icon className="w-8 h-8 text-primary" />
+      {/* Featured Tools Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground flex items-center justify-center gap-3">
+              <QrCode className="w-8 h-8 text-primary" />
+              Featured Tools
+              <QrCode className="w-8 h-8 text-primary" />
+            </h2>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            {tools.slice(0, 6).map((tool, index) => (
+              <Link to={tool.href} key={index}>
+                <div className="tool-card text-center group">
+                  <div className="bg-primary/10 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                    <tool.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">{category.title}</h3>
-                  <p className="text-gray-600 text-sm">{category.description}</p>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">{tool.title}</h3>
+                  <p className="text-muted-foreground text-sm">{tool.description}</p>
+                  <span className="inline-block mt-3 px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-medium">
+                    {tool.badge}
+                  </span>
                 </div>
               </Link>
             ))}
@@ -209,30 +212,33 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How to Use Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Why Choose Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why Choose ToolVibe?</h2>
-            <div className="w-12 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Why Choose ToolVibe?</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               ToolVibe is your go-to destination for free online tools. No registration required, 
-              no hidden fees, no limitations. Just powerful, browser-based utilities to help you 
-              get work done faster and more efficiently.
+              no hidden fees, no limitations. Just powerful, browser-based utilities.
             </p>
           </div>
 
-          {/* Popular Tools Grid */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mb-16">
-            {tools.map((tool, index) => (
-              <ToolCard key={index} {...tool} />
+          {/* Highlights Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16">
+            {highlights.map((highlight, index) => (
+              <div key={index} className="text-center">
+                <div className="bg-primary/10 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <highlight.icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">{highlight.title}</h3>
+              </div>
             ))}
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" className="btn-primary text-lg px-8">
+            <Button asChild size="lg" className="btn-primary text-lg px-8 py-4">
               <Link to="/tools">
-                View All Tools
+                View All Tools →
               </Link>
             </Button>
           </div>

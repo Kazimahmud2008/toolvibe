@@ -4,47 +4,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ToolVibe Design System - Modern Purple & Blue Theme */
+/* 10015.io Inspired Clean Design System */
 
 @layer base {
   :root {
-    /* Core Brand Colors */
+    /* Core Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 222 47% 11%;
     
-    /* ToolVibe Brand Palette - Purple & Blue */
-    --primary: 262 83% 58%; /* Rich Purple #8B5CF6 */
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 262 83% 68%;
+    /* 10015.io Blue Theme */
+    --primary: 221 83% 53%; /* Clean Blue #4C6EF5 */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 221 83% 63%;
     
-    --secondary: 217 91% 60%; /* Bright Blue #3B82F6 */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96%; /* Light Gray */
+    --secondary-foreground: 222 47% 11%;
     
-    --accent: 142 76% 36%; /* Green Accent #10B981 */
-    --accent-foreground: 0 0% 98%;
+    --accent: 221 83% 53%; /* Same as primary for consistency */
+    --accent-foreground: 0 0% 100%;
     
     /* Neutral System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --muted: 220 14% 96%; /* Light Gray #F3F4F6 */
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --card-foreground: 222 47% 11%;
+    --muted: 210 40% 98%; /* Very Light Gray */
+    --muted-foreground: 215 16% 47%;
     
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 224 71% 36%;
+    --ring: 221 83% 53%;
     
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 63%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 40% 98%) 0%, hsl(221 83% 53% / 0.1) 100%);
     --gradient-card: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
     
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
-    --shadow-card: 0 4px 20px -2px hsl(var(--primary) / 0.1);
+    /* Shadows - Subtle like 10015.io */
+    --shadow-elegant: 0 4px 12px -4px hsl(221 83% 53% / 0.15);
+    --shadow-glow: 0 0 20px hsl(221 83% 53% / 0.2);
+    --shadow-card: 0 2px 8px -2px hsl(221 83% 53% / 0.1);
     
     --radius: 0.75rem;
 
@@ -119,8 +119,8 @@
     background: var(--gradient-hero);
   }
   
-  .toolvibe-hero {
-    background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(217 91% 60%) 100%);
+  .clean-hero {
+    background: linear-gradient(135deg, hsl(210 40% 98%) 0%, hsl(221 83% 53% / 0.05) 100%);
   }
   
   .card-gradient {
@@ -140,22 +140,22 @@
   }
   
   .hover-lift {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-glow;
+    @apply transition-all duration-200 hover:scale-[1.02] hover:shadow-elegant;
   }
   
   .tool-card {
-    @apply bg-card border border-border rounded-xl p-6 shadow-card hover-lift;
+    @apply bg-card border border-border rounded-lg p-6 shadow-card hover-lift;
   }
   
   .category-card {
-    @apply bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300;
+    @apply bg-white border border-border rounded-lg p-6 hover:shadow-elegant transition-all duration-200;
   }
   
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-elegant;
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-elegant rounded-lg;
   }
   
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90;
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 border border-border rounded-lg;
   }
 }
