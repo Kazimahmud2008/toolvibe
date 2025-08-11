@@ -1,274 +1,173 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Switch } from "@/components/ui/switch";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Textarea } from "@/components/ui/textarea";
-import { Copy, Download, Plus, Trash2 } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Copy, RotateCcw } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-interface Shadow {
-  id: string;
-  x: number;
-  y: number;
-  blur: number;
-  spread: number;
-  color: string;
-  inset: boolean;
-}
-
 const CSSBoxShadowGenerator = () => {
-  const [shadows, setShadows] = useState<Shadow[]>([
-    {
-      id: "1",
-      x: 0,
-      y: 4,
-      blur: 6,
-      spread: 0,
-      color: "#000000",
-      inset: false,
-    },
-  ]);
-  const [generatedCSS, setGeneratedCSS] = useState("");
+  const [horizontalOffset, setHorizontalOffset] = useState([0]);
+  const [verticalOffset, setVerticalOffset] = useState([4]);
+  const [blurRadius, setBlurRadius] = useState([8]);
+  const [spreadRadius, setSpreadRadius] = useState([0]);
+  const [color, setColor] = useState("#000000");
+  const [opacity, setOpacity] = useState([25]);
+  const [inset, setInset] = useState(false);
   const { toast } = useToast();
 
-  const addShadow = () => {
-    const newShadow: Shadow = {
-      id: Date.now().toString(),
-      x: 0,
-      y: 4,
-      blur: 6,
-      spread: 0,
-      color: "#000000",
-      inset: false,
-    };
-    setShadows([...shadows, newShadow]);
-  };
-
-  const removeShadow = (id: string) => {
-    if (shadows.length > 1) {
-      setShadows(shadows.filter((shadow) => shadow.id !== id));
-    }
-  };
-
-  const updateShadow = (id: string, updates: Partial<Shadow>) => {
-    setShadows(shadows.map((shadow) => 
-      shadow.id === id ? { ...shadow, ...updates } : shadow
-    ));
-  };
-
   const generateCSS = () => {
-    const shadowStrings = shadows.map((shadow) => {
-      const insetPrefix = shadow.inset ? "inset " : "";
-      return `${insetPrefix}${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.spread}px ${shadow.color}`;
-    });
-    
-    const css = `box-shadow: ${shadowStrings.join(", ")};`;
-    setGeneratedCSS(css);
+    const alpha = opacity[0] / 100;
+    const shadowType = inset ? "inset " : "";
+    return `box-shadow: ${shadowType}${horizontalOffset[0]}px ${verticalOffset[0]}px ${blurRadius[0]}px ${spreadRadius[0]}px ${color}${Math.floor(alpha * 255).toString(16).padStart(2, '0')};`;
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(generatedCSS);
+    navigator.clipboard.writeText(generateCSS());
     toast({
       title: "Copied!",
-      description: "Box shadow CSS copied to clipboard.",
+      description: "CSS copied to clipboard",
     });
   };
 
-  const downloadCSS = () => {
-    const blob = new Blob([generatedCSS], { type: "text/css" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "box-shadow.css";
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const presetShadows = [
-    { name: "Subtle", shadows: [{ x: 0, y: 1, blur: 3, spread: 0, color: "#00000026", inset: false }] },
-    { name: "Medium", shadows: [{ x: 0, y: 4, blur: 6, spread: -1, color: "#00000026", inset: false }] },
-    { name: "Large", shadows: [{ x: 0, y: 10, blur: 15, spread: -3, color: "#00000026", inset: false }] },
-    { name: "Extra Large", shadows: [{ x: 0, y: 25, blur: 50, spread: -12, color: "#00000040", inset: false }] },
-    { name: "Inner", shadows: [{ x: 0, y: 2, blur: 4, spread: 0, color: "#00000026", inset: true }] },
-  ];
-
-  const applyPreset = (preset: typeof presetShadows[0]) => {
-    const newShadows = preset.shadows.map((shadow, index) => ({
-      id: (Date.now() + index).toString(),
-      ...shadow,
-    }));
-    setShadows(newShadows);
-  };
-
-  const getBoxShadowStyle = () => {
-    const shadowStrings = shadows.map((shadow) => {
-      const insetPrefix = shadow.inset ? "inset " : "";
-      return `${insetPrefix}${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.spread}px ${shadow.color}`;
-    });
-    return shadowStrings.join(", ");
+  const reset = () => {
+    setHorizontalOffset([0]);
+    setVerticalOffset([4]);
+    setBlurRadius([8]);
+    setSpreadRadius([0]);
+    setColor("#000000");
+    setOpacity([25]);
+    setInset(false);
   };
 
   return (
-    <div className="max-w-6xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>CSS Box Shadow Generator</CardTitle>
+          <CardTitle className="gradient-text">CSS Box Shadow Generator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* Presets */}
-          <div className="space-y-2">
-            <Label>Presets</Label>
-            <div className="flex gap-2 flex-wrap">
-              {presetShadows.map((preset) => (
-                <Button
-                  key={preset.name}
-                  onClick={() => applyPreset(preset)}
-                  variant="outline"
-                  size="sm"
-                >
-                  {preset.name}
-                </Button>
-              ))}
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Controls */}
             <div className="space-y-6">
-              {shadows.map((shadow, index) => (
-                <Card key={shadow.id}>
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center justify-between">
-                      <h4 className="font-medium">Shadow {index + 1}</h4>
-                      {shadows.length > 1 && (
-                        <Button
-                          onClick={() => removeShadow(shadow.id)}
-                          variant="outline"
-                          size="sm"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </Button>
-                      )}
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label>X Offset: {shadow.x}px</Label>
-                        <Slider
-                          value={[shadow.x]}
-                          onValueChange={(value) => updateShadow(shadow.id, { x: value[0] })}
-                          min={-50}
-                          max={50}
-                          step={1}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label>Y Offset: {shadow.y}px</Label>
-                        <Slider
-                          value={[shadow.y]}
-                          onValueChange={(value) => updateShadow(shadow.id, { y: value[0] })}
-                          min={-50}
-                          max={50}
-                          step={1}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label>Blur: {shadow.blur}px</Label>
-                        <Slider
-                          value={[shadow.blur]}
-                          onValueChange={(value) => updateShadow(shadow.id, { blur: value[0] })}
-                          min={0}
-                          max={100}
-                          step={1}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label>Spread: {shadow.spread}px</Label>
-                        <Slider
-                          value={[shadow.spread]}
-                          onValueChange={(value) => updateShadow(shadow.id, { spread: value[0] })}
-                          min={-50}
-                          max={50}
-                          step={1}
-                        />
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label>Color</Label>
-                        <Input
-                          type="color"
-                          value={shadow.color}
-                          onChange={(e) => updateShadow(shadow.id, { color: e.target.value })}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label>Inset</Label>
-                        <div className="flex items-center space-x-2">
-                          <Switch
-                            checked={shadow.inset}
-                            onCheckedChange={(checked) => updateShadow(shadow.id, { inset: checked })}
-                          />
-                          <span className="text-sm">{shadow.inset ? "Inner" : "Outer"}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              <div className="space-y-4">
+                <div>
+                  <Label>Horizontal Offset: {horizontalOffset[0]}px</Label>
+                  <Slider
+                    value={horizontalOffset}
+                    onValueChange={setHorizontalOffset}
+                    min={-50}
+                    max={50}
+                    step={1}
+                    className="mt-2"
+                  />
+                </div>
+                <div>
+                  <Label>Vertical Offset: {verticalOffset[0]}px</Label>
+                  <Slider
+                    value={verticalOffset}
+                    onValueChange={setVerticalOffset}
+                    min={-50}
+                    max={50}
+                    step={1}
+                    className="mt-2"
+                  />
+                </div>
+                <div>
+                  <Label>Blur Radius: {blurRadius[0]}px</Label>
+                  <Slider
+                    value={blurRadius}
+                    onValueChange={setBlurRadius}
+                    max={100}
+                    step={1}
+                    className="mt-2"
+                  />
+                </div>
+                <div>
+                  <Label>Spread Radius: {spreadRadius[0]}px</Label>
+                  <Slider
+                    value={spreadRadius}
+                    onValueChange={setSpreadRadius}
+                    min={-50}
+                    max={50}
+                    step={1}
+                    className="mt-2"
+                  />
+                </div>
+                <div>
+                  <Label>Opacity: {opacity[0]}%</Label>
+                  <Slider
+                    value={opacity}
+                    onValueChange={setOpacity}
+                    max={100}
+                    step={1}
+                    className="mt-2"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <Label>Color</Label>
+                    <input
+                      type="color"
+                      value={color}
+                      onChange={(e) => setColor(e.target.value)}
+                      className="w-full h-10 mt-2 rounded border border-border"
+                    />
+                  </div>
+                  <div>
+                    <Label>Shadow Type</Label>
+                    <Select value={inset ? "inset" : "outset"} onValueChange={(value) => setInset(value === "inset")}>
+                      <SelectTrigger className="mt-2">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="outset">Outset</SelectItem>
+                        <SelectItem value="inset">Inset</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              </div>
 
               <div className="flex gap-2">
-                <Button onClick={addShadow} variant="outline">
-                  <Plus className="w-4 h-4 mr-2" />
-                  Add Shadow
+                <Button onClick={copyToClipboard} className="btn-gradient">
+                  <Copy className="w-4 h-4 mr-2" />
+                  Copy CSS
                 </Button>
-                <Button onClick={generateCSS}>Generate CSS</Button>
+                <Button variant="outline" onClick={reset}>
+                  <RotateCcw className="w-4 h-4 mr-2" />
+                  Reset
+                </Button>
               </div>
             </div>
 
             {/* Preview */}
             <div className="space-y-4">
-              <Label>Preview</Label>
-              <div className="border rounded-lg p-8 bg-muted/50 flex items-center justify-center min-h-[300px]">
-                <div
-                  className="w-32 h-32 bg-background rounded-lg"
-                  style={{
-                    boxShadow: getBoxShadowStyle(),
-                  }}
-                />
+              <div className="text-center">
+                <h3 className="text-lg font-semibold mb-4">Preview</h3>
+                <div className="flex justify-center p-8">
+                  <div
+                    className="w-48 h-48 bg-white border border-border rounded-lg"
+                    style={{
+                      boxShadow: `${inset ? "inset " : ""}${horizontalOffset[0]}px ${verticalOffset[0]}px ${blurRadius[0]}px ${spreadRadius[0]}px ${color}${Math.floor((opacity[0] / 100) * 255).toString(16).padStart(2, '0')}`,
+                    }}
+                  />
+                </div>
               </div>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-sm">Generated CSS</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <code className="text-sm font-mono bg-muted p-3 rounded block break-all">
+                    {generateCSS()}
+                  </code>
+                </CardContent>
+              </Card>
             </div>
           </div>
-
-          {generatedCSS && (
-            <Tabs defaultValue="css">
-              <TabsList>
-                <TabsTrigger value="css">CSS</TabsTrigger>
-              </TabsList>
-              <TabsContent value="css" className="space-y-4">
-                <Textarea
-                  value={generatedCSS}
-                  readOnly
-                  className="min-h-[80px] font-mono text-sm"
-                />
-                <div className="flex gap-2">
-                  <Button onClick={copyToClipboard} variant="outline">
-                    <Copy className="w-4 h-4 mr-2" />
-                    Copy CSS
-                  </Button>
-                  <Button onClick={downloadCSS} variant="outline">
-                    <Download className="w-4 h-4 mr-2" />
-                    Download
-                  </Button>
-                </div>
-              </TabsContent>
-            </Tabs>
-          )}
         </CardContent>
       </Card>
     </div>

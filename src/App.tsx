@@ -26,6 +26,11 @@ import WordCounterPage from "./pages/WordCounterPage";
 import LoremIpsumPage from "./pages/LoremIpsumPage";
 import RegexTesterPage from "./pages/RegexTesterPage";
 import TimestampConverterPage from "./pages/TimestampConverterPage";
+import CSSBorderRadiusPage from "./pages/CSSBorderRadiusPage";
+import CSSBoxShadowPage from "./pages/CSSBoxShadowPage";
+import CSSFormatterPage from "./pages/CSSFormatterPage";
+import CSSGradientPage from "./pages/CSSGradientPage";
+import ColorConverterPage from "./pages/ColorConverterPage";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +63,11 @@ const App = () => (
           <Route path="/tools/lorem-ipsum" element={<LoremIpsumPage />} />
           <Route path="/tools/regex-tester" element={<RegexTesterPage />} />
           <Route path="/tools/timestamp-converter" element={<TimestampConverterPage />} />
+          <Route path="/tools/css-border-radius" element={<CSSBorderRadiusPage />} />
+          <Route path="/tools/css-box-shadow" element={<CSSBoxShadowPage />} />
+          <Route path="/tools/css-formatter" element={<CSSFormatterPage />} />
+          <Route path="/tools/css-gradient" element={<CSSGradientPage />} />
+          <Route path="/tools/color-converter" element={<ColorConverterPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
