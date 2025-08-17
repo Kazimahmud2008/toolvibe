@@ -109,7 +109,7 @@
   }
 
   .tool-card {
-    @apply bg-white rounded-xl p-6 border border-blue-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 group;
+    @apply bg-white rounded-xl p-6 border border-blue-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300;
   }
 
   .feature-grid {
