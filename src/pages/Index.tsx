@@ -183,54 +183,56 @@ const Index = () => {
         <div className="absolute inset-0 futuristic-grid opacity-30"></div>
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
-            <div className="inline-flex items-center px-6 py-3 rounded-full glass-effect text-primary text-sm font-semibold mb-8 pulse-glow">
-              <Sparkles className="h-4 w-4 mr-2" />
-              55+ Professional Developer Tools
+            <div className="inline-flex items-center px-8 py-4 rounded-full glass-effect text-primary text-sm font-bold mb-12 pulse-glow gradient-border">
+              <div className="flex items-center px-6 py-2">
+                <Sparkles className="h-5 w-5 mr-3" />
+                55+ Professional Developer Tools
+              </div>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-black mb-8 text-shadow leading-tight">
+            <h1 className="text-7xl md:text-9xl font-black mb-12 leading-tight hero-text-glow">
               Modern Tools for{" "}
               <span className="gradient-text block md:inline">Smart Developers</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-slate-600 mb-6 max-w-4xl mx-auto leading-relaxed font-medium">
+            <p className="text-2xl md:text-3xl text-slate-700 mb-8 max-w-5xl mx-auto leading-relaxed font-medium">
               Enhance your development workflow with our collection of fast, secure, and 
               intuitive browser-based utilities designed for modern developers and teams.
             </p>
             
-            <p className="text-lg text-primary font-semibold mb-16">
+            <p className="text-xl text-primary font-bold mb-20 tracking-wide">
               No installations. No signups. Just pure productivity.
             </p>
 
             {/* Enhanced Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-20">
               <div className="stats-card floating-animation">
-                <div className="text-4xl md:text-5xl font-black gradient-text mb-3">55+</div>
-                <div className="text-sm font-medium text-slate-600">Free Tools</div>
+                <div className="text-5xl md:text-6xl font-black gradient-text mb-4">55+</div>
+                <div className="text-base font-bold text-slate-700">Free Tools</div>
               </div>
               <div className="stats-card floating-animation" style={{ animationDelay: '0.5s' }}>
-                <div className="text-4xl md:text-5xl font-black gradient-text mb-3">1M+</div>
-                <div className="text-sm font-medium text-slate-600">Monthly Users</div>
+                <div className="text-5xl md:text-6xl font-black gradient-text mb-4">1M+</div>
+                <div className="text-base font-bold text-slate-700">Monthly Users</div>
               </div>
               <div className="stats-card floating-animation" style={{ animationDelay: '1s' }}>
-                <div className="text-4xl md:text-5xl font-black gradient-text mb-3">99.9%</div>
-                <div className="text-sm font-medium text-slate-600">Uptime</div>
+                <div className="text-5xl md:text-6xl font-black gradient-text mb-4">99.9%</div>
+                <div className="text-base font-bold text-slate-700">Uptime</div>
               </div>
               <div className="stats-card floating-animation" style={{ animationDelay: '1.5s' }}>
-                <div className="text-4xl md:text-5xl font-black gradient-text mb-3">24/7</div>
-                <div className="text-sm font-medium text-slate-600">Available</div>
+                <div className="text-5xl md:text-6xl font-black gradient-text mb-4">24/7</div>
+                <div className="text-base font-bold text-slate-700">Available</div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button asChild size="lg" className="btn-primary text-lg px-10 py-6 rounded-xl font-semibold">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center">
+              <Button asChild size="lg" className="btn-primary text-xl px-12 py-8 rounded-2xl font-bold">
                 <Link to="/tools">
-                  <Zap className="h-5 w-5 mr-2" />
+                  <Zap className="h-6 w-6 mr-3" />
                   Browse All Tools
-                  <ArrowRight className="h-5 w-5 ml-2" />
+                  <ArrowRight className="h-6 w-6 ml-3" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-10 py-6 rounded-xl font-semibold glass-effect border-0">
+              <Button asChild variant="outline" size="lg" className="text-xl px-12 py-8 rounded-2xl font-bold glass-effect border-2 border-gray-200 hover:border-primary">
                 <Link to="/categories">View Categories</Link>
               </Button>
             </div>
