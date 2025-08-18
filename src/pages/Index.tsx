@@ -179,60 +179,57 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="hero-gradient min-h-screen flex items-center relative overflow-hidden">
-        <div className="absolute inset-0 futuristic-grid opacity-30"></div>
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="text-center max-w-5xl mx-auto">
-            <div className="inline-flex items-center px-8 py-4 rounded-full glass-effect text-primary text-sm font-bold mb-12 pulse-glow gradient-border">
-              <div className="flex items-center px-6 py-2">
-                <Sparkles className="h-5 w-5 mr-3" />
-                55+ Professional Developer Tools
-              </div>
+      <section className="hero-gradient min-h-screen flex items-center">
+        <div className="container mx-auto px-4 py-20">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-8">
+              <Sparkles className="h-4 w-4 mr-2" />
+              55+ Professional Developer Tools
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight hero-text-glow">
+            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight text-foreground">
               Modern Tools for{" "}
-              <span className="gradient-text block md:inline">Smart Developers</span>
+              <span className="gradient-text">Smart Developers</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-4xl mx-auto leading-relaxed font-medium">
+            <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-3xl mx-auto leading-relaxed">
               Enhance your development workflow with our collection of fast, secure, and 
               intuitive browser-based utilities designed for modern developers and teams.
             </p>
             
-            <p className="text-lg text-primary font-bold mb-16 tracking-wide">
+            <p className="text-base text-primary font-medium mb-12">
               No installations. No signups. Just pure productivity.
             </p>
 
-            {/* Enhanced Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-20">
-              <div className="stats-card floating-animation">
-                <div className="text-5xl md:text-6xl font-black gradient-text mb-4">55+</div>
-                <div className="text-base font-bold text-slate-700">Free Tools</div>
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+              <div className="stats-card">
+                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">55+</div>
+                <div className="text-sm font-medium text-muted-foreground">Free Tools</div>
               </div>
-              <div className="stats-card floating-animation" style={{ animationDelay: '0.5s' }}>
-                <div className="text-5xl md:text-6xl font-black gradient-text mb-4">1M+</div>
-                <div className="text-base font-bold text-slate-700">Monthly Users</div>
+              <div className="stats-card">
+                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">1M+</div>
+                <div className="text-sm font-medium text-muted-foreground">Monthly Users</div>
               </div>
-              <div className="stats-card floating-animation" style={{ animationDelay: '1s' }}>
-                <div className="text-5xl md:text-6xl font-black gradient-text mb-4">99.9%</div>
-                <div className="text-base font-bold text-slate-700">Uptime</div>
+              <div className="stats-card">
+                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">99.9%</div>
+                <div className="text-sm font-medium text-muted-foreground">Uptime</div>
               </div>
-              <div className="stats-card floating-animation" style={{ animationDelay: '1.5s' }}>
-                <div className="text-5xl md:text-6xl font-black gradient-text mb-4">24/7</div>
-                <div className="text-base font-bold text-slate-700">Available</div>
+              <div className="stats-card">
+                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">24/7</div>
+                <div className="text-sm font-medium text-muted-foreground">Available</div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-8 justify-center">
-              <Button asChild size="lg" className="btn-primary text-xl px-12 py-8 rounded-2xl font-bold">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="btn-primary px-8 py-3 rounded-lg font-medium">
                 <Link to="/tools">
-                  <Zap className="h-6 w-6 mr-3" />
+                  <Zap className="h-5 w-5 mr-2" />
                   Browse All Tools
-                  <ArrowRight className="h-6 w-6 ml-3" />
+                  <ArrowRight className="h-5 w-5 ml-2" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-xl px-12 py-8 rounded-2xl font-bold glass-effect border-2 border-gray-200 hover:border-primary">
+              <Button asChild variant="outline" size="lg" className="px-8 py-3 rounded-lg font-medium">
                 <Link to="/categories">View Categories</Link>
               </Button>
             </div>
@@ -241,31 +238,31 @@ const Index = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-24 relative">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 gradient-text">Categories</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-medium">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Categories</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Professional developer tools organized by functionality for maximum productivity
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {categories.map((category, index) => (
               <Link key={index} to={category.href} className="group">
-                <Card className="category-card group-hover:scale-[1.02] transition-transform duration-300">
+                <Card className="category-card group-hover:scale-[1.02] transition-transform duration-200">
                   <CardHeader className="text-center pb-4">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                      <category.icon className="h-8 w-8 text-white" />
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <category.icon className="h-6 w-6 text-primary-foreground" />
                     </div>
-                    <CardTitle className="text-2xl font-bold mb-2">{category.title}</CardTitle>
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold">
+                    <CardTitle className="text-xl font-bold mb-2">{category.title}</CardTitle>
+                    <div className="inline-flex items-center px-2 py-1 rounded-md bg-secondary text-secondary-foreground text-sm font-medium">
                       {category.toolCount} tools
                     </div>
                   </CardHeader>
                   <CardContent className="text-center pt-0">
-                    <p className="text-slate-600 font-medium leading-relaxed mb-4">{category.description}</p>
-                    <div className="text-xs text-slate-500 space-y-1">
+                    <p className="text-muted-foreground leading-relaxed mb-3">{category.description}</p>
+                    <div className="text-xs text-muted-foreground space-y-1">
                       {category.tools.slice(0, 3).map((tool, idx) => (
                         <div key={idx} className="flex items-center justify-center">
                           <span>{tool}</span>
@@ -282,10 +279,10 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button asChild variant="outline" size="lg" className="glass-effect border-0 px-8 py-4 text-lg font-semibold">
+            <Button asChild variant="outline" size="lg" className="px-6 py-2 font-medium">
               <Link to="/categories">
                 View All Categories
-                <ArrowRight className="h-5 w-5 ml-2" />
+                <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
           </div>
