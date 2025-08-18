@@ -190,17 +190,17 @@ const Index = () => {
               </div>
             </div>
             
-            <h1 className="text-7xl md:text-9xl font-black mb-12 leading-tight hero-text-glow">
+            <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight hero-text-glow">
               Modern Tools for{" "}
               <span className="gradient-text block md:inline">Smart Developers</span>
             </h1>
             
-            <p className="text-2xl md:text-3xl text-slate-700 mb-8 max-w-5xl mx-auto leading-relaxed font-medium">
+            <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-4xl mx-auto leading-relaxed font-medium">
               Enhance your development workflow with our collection of fast, secure, and 
               intuitive browser-based utilities designed for modern developers and teams.
             </p>
             
-            <p className="text-xl text-primary font-bold mb-20 tracking-wide">
+            <p className="text-lg text-primary font-bold mb-16 tracking-wide">
               No installations. No signups. Just pure productivity.
             </p>
 
