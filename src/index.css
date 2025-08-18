@@ -5,41 +5,41 @@
 
 @layer base {
   :root {
-    /* Unique gradient theme with vibrant colors */
-    --background: 255 255 255; /* Pure white */
+    /* Futuristic sci-fi color scheme */
+    --background: 248 250 252; /* Light gray-blue */
     --foreground: 15 23 42; /* Deep slate */
     --card: 255 255 255;
     --card-foreground: 15 23 42;
     --popover: 255 255 255;
     --popover-foreground: 15 23 42;
-    --primary: 236 72 153; /* Vibrant pink */
-    --primary-foreground: 255 255 255;
-    --secondary: 241 245 249;
-    --secondary-foreground: 51 65 85;
-    --muted: 248 250 252;
+    --primary: 0 212 255; /* Electric cyan */
+    --primary-foreground: 15 23 42;
+    --secondary: 30 41 59;
+    --secondary-foreground: 241 245 249;
+    --muted: 241 245 249;
     --muted-foreground: 100 116 139;
-    --accent: 241 245 249;
-    --accent-foreground: 51 65 85;
+    --accent: 0 255 157; /* Electric green */
+    --accent-foreground: 15 23 42;
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
     --border: 226 232 240;
     --input: 255 255 255;
-    --ring: 236 72 153;
+    --ring: 0 212 255;
     --radius: 0.75rem;
 
-    /* Vibrant gradients */
-    --gradient-primary: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%);
-    --gradient-secondary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    --gradient-hero: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 50%, #ecfdf5 100%);
+    /* Futuristic gradients */
+    --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0099ff 50%, #0066cc 100%);
+    --gradient-secondary: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    --gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
     --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.9) 100%);
-    --gradient-mesh: radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-                     radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-                     radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+    --gradient-mesh: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+                     radial-gradient(circle at 80% 20%, rgba(0, 255, 157, 0.08) 0%, transparent 50%),
+                     radial-gradient(circle at 40% 40%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
     
-    /* Crisp shadows */
-    --shadow-primary: 0 10px 25px -5px rgba(236, 72, 153, 0.25);
+    /* Electric shadows */
+    --shadow-primary: 0 10px 25px -5px rgba(0, 212, 255, 0.25);
     --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-glow: 0 0 50px rgba(236, 72, 153, 0.3);
+    --shadow-glow: 0 0 50px rgba(0, 212, 255, 0.4);
 
     --sidebar-background: 255 255 255;
     --sidebar-foreground: 9 9 11;
@@ -52,32 +52,32 @@
   }
 
   .dark {
-    --background: 9 9 11;
-    --foreground: 250 250 250;
-    --card: 24 24 27;
-    --card-foreground: 250 250 250;
-    --popover: 24 24 27;
-    --popover-foreground: 250 250 250;
-    --primary: 139 69 255;
-    --primary-foreground: 255 255 255;
-    --secondary: 39 39 42;
-    --secondary-foreground: 244 244 245;
-    --muted: 39 39 42;
-    --muted-foreground: 161 161 170;
-    --accent: 39 39 42;
-    --accent-foreground: 250 250 250;
+    --background: 15 23 42; /* Deep space blue */
+    --foreground: 241 245 249;
+    --card: 30 41 59;
+    --card-foreground: 241 245 249;
+    --popover: 30 41 59;
+    --popover-foreground: 241 245 249;
+    --primary: 0 212 255; /* Electric cyan */
+    --primary-foreground: 15 23 42;
+    --secondary: 51 65 85;
+    --secondary-foreground: 226 232 240;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
+    --accent: 0 255 157; /* Electric green */
+    --accent-foreground: 15 23 42;
     --destructive: 220 38 38;
-    --destructive-foreground: 250 250 250;
-    --border: 39 39 42;
-    --input: 39 39 42;
-    --ring: 139 69 255;
+    --destructive-foreground: 241 245 249;
+    --border: 51 65 85;
+    --input: 30 41 59;
+    --ring: 0 212 255;
 
-    /* Dark mode gradients */
-    --gradient-hero: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1f2937 100%);
-    --gradient-card: linear-gradient(145deg, rgba(39, 39, 42, 0.95) 0%, rgba(24, 24, 27, 0.9) 100%);
-    --gradient-mesh: radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
-                     radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-                     radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.15) 0%, transparent 50%);
+    /* Dark mode sci-fi gradients */
+    --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    --gradient-card: linear-gradient(145deg, rgba(30, 41, 59, 0.95) 0%, rgba(51, 65, 85, 0.9) 100%);
+    --gradient-mesh: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                     radial-gradient(circle at 80% 20%, rgba(0, 255, 157, 0.15) 0%, transparent 50%),
+                     radial-gradient(circle at 40% 40%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
 
     --sidebar-background: 24 24 27;
     --sidebar-foreground: 244 244 245;
@@ -129,7 +129,7 @@
     left: 50%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(139, 69, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     animation: pulse-slow 4s ease-in-out infinite;
     pointer-events: none;
@@ -147,8 +147,8 @@
   .btn-primary {
     @apply text-primary-foreground hover:scale-110 shadow-lg transition-all duration-300;
     background: var(--gradient-primary);
-    border: 1px solid rgba(139, 69, 255, 0.3);
-    box-shadow: 0 4px 15px rgba(139, 69, 255, 0.4);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
   }
 
   .btn-primary:hover {
@@ -211,8 +211,8 @@
 
   .futuristic-grid {
     background-image: 
-      linear-gradient(rgba(139, 69, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 69, 255, 0.1) 1px, transparent 1px);
+      linear-gradient(rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 255, 0.08) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
@@ -230,8 +230,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(139, 69, 255, 0.2); }
-    50% { box-shadow: 0 0 60px rgba(139, 69, 255, 0.5); }
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.2); }
+    50% { box-shadow: 0 0 60px rgba(0, 212, 255, 0.5); }
   }
 
   @keyframes pulse-slow {
@@ -256,7 +256,7 @@
   }
 
   .hero-text-glow {
-    text-shadow: 0 0 40px rgba(139, 69, 255, 0.3);
+    text-shadow: 0 0 40px rgba(0, 212, 255, 0.25);
   }
 
   .gradient-border {
